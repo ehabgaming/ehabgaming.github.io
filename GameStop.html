@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+    <body>
+        <h1>GameStop</h1>
+        <p id="GreatID"></p>
+        <hr>
+
+        <h2>Name</h2>
+        <p id="NameID"></p>
+
+        <h2>Name of Game</h2>
+        <p id="GameID"></p>
+
+        <h2>Amount</h2>
+        <p id="AmountID"></p>
+
+        <h2>Order arrival</h2>
+        <p id="ArrivelID"></p>
+
+        <script>
+            alert("Hi welcome to GameStop!!");
+
+            let name = prompt("What is your name?");
+            document.getElementById("NameID").textContent = name;
+            let gameName = prompt("What is the name of the Game u would like to buy?");
+            document.getElementById("GameID").textContent = gameName;
+            let gameAmount = prompt("How much do you wanna buy?");
+
+            let intAmount = parseInt(gameAmount);
+            if(intAmount <= 0 || intAmount > 99)
+            {
+               alert("ERROR 304: Amount is less then 0 or over 99");
+               window.location.reload();
+            }
+
+            let hour = new Date().getHours();
+            if(hour < 12)
+            {
+                document.getElementById("GreatID").textContent = "Good Morning " + name;
+            }
+            else if(hour < 18)
+            {
+                document.getElementById("GreatID").textContent = "Good Afternoon " + name;
+            }
+            else
+            {
+                document.getElementById("GreatID").textContent = "Good Evening " + name;
+            }
+
+            document.getElementById("AmountID").textContent = gameAmount;
+
+            const date = new Date();
+            let arrieveDate = date.setDate(date.getDate() + 7);
+
+            document.getElementById("ArrivelID").textContent = date;
+
+        </script>
+    </body>
+</html>
