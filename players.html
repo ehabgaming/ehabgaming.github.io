@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html>
+    <head>
+            <!-- Required meta tags -->
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        
+        <!-- Bootstrap CSS -->
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" 
+        integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" 
+        integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+        <link rel="icon" href="basketball.svg">
+
+    </head>
+
+    <body>
+        <ul class="nav justify-content-center" style="padding: 30px;">
+            <ul class="nav nav-underline">
+                <li class="nav-item">
+                    <a class="nav-link" href="Games.html">Games</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" aria-current="page" href="Teams.html">Teams</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link active" aria-current="page" href="#">Players</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="https://github.com/ehabgaming">GitHub</a>
+                </li>
+            </ul>
+        </ul>   
+
+            <div class="container text-center">
+                <div class="row">
+                    <div class="col">
+                    <div class="card">
+                            <div class="card-body">
+                                <div class="container mt-4">
+                                    <label for="teamDropdown" class="form-label">Select a Team</label>
+                                    <select class="form-select" id="teamDropdown">
+                                        <option selected disabled>Choose a team...</option>
+                                        <option value="1">Atlanta Hawks</option>
+                                        <option value="2">Boston Celtics</option>
+                                        <option value="3">Brooklyn Nets</option>
+                                        <option value="4">Charlotte Hornets</option>
+                                        <option value="5">Chicago Bulls</option>
+                                        <option value="6">Cleveland Cavaliers</option>
+                                        <option value="7">Dallas Mavericks</option>
+                                        <option value="8">Denver Nuggets</option>
+                                        <option value="9">Detroit Pistons</option>
+                                        <option value="10">Golden State Warriors</option>
+                                        <option value="11">Houston Rockets</option>
+                                        <option value="12">Indiana Pacers</option>
+                                        <option value="13">LA Clippers</option>
+                                        <option value="14">Los Angeles Lakers</option>
+                                        <option value="15">Memphis Grizzlies</option>
+                                        <option value="16">Miami Heat</option>
+                                        <option value="17">Milwaukee Bucks</option>
+                                        <option value="18">Minnesota Timberwolves</option>
+                                        <option value="19">New Orleans Pelicans</option>
+                                        <option value="20">New York Knicks</option>
+                                        <option value="21">Oklahoma City Thunder</option>
+                                        <option value="22">Orlando Magic</option>
+                                        <option value="23">Philadelphia 76ers</option>
+                                        <option value="24">Phoenix Suns</option>
+                                        <option value="25">Portland Trail Blazers</option>
+                                        <option value="26">Sacramento Kings</option>
+                                        <option value="27">San Antonio Spurs</option>
+                                        <option value="28">Toronto Raptors</option>
+                                        <option value="29">Utah Jazz</option>
+                                        <option value="30">Washington Wizards</option>
+                                    </select>
+                                    <br>
+                                    <button type="button" class="btn btn-secondary" onclick="SearchTeam()">Seach Team</button>
+                                </div>
+                            </div>
+                            <ul class="list-group list-group-flush" id="PlayerList"></ul>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="card">
+                            <div class="card-body">
+                                <label for="GuessPlayer" class="form-label">Guess The Player</label>
+                                <br>
+                                <button onclick="PlayGame()" type="button" class="btn btn-success">Play Game</button>
+                                <br>
+                                <label for="playerTeam" class="form-label">Team</label>
+                                <input id= "playerTeam" class="form-control" type="text" value="" aria-label="readonly input example" readonly>
+                                <br>
+                                <label for="playerPosition" class="form-label">Position</label>
+                                <input id= "playerPosition" class="form-control" type="text" value="" aria-label="readonly input example" readonly>
+                                <br>
+                                <label for="playerJersey" class="form-label">Jersey Number</label>
+                                <input id= "playerJersey" class="form-control" type="text" value="" aria-label="readonly input example" readonly>
+                                <br>
+                                <label for="playerDraft" class="form-label">Draft Year</label>
+                                <input id="playerDraft" class="form-control" type="text" value="" aria-label="readonly input example" readonly>
+                                <br>
+                                <div id="GuessGameStart"></div>
+                            </div>
+                            
+                        </div>
+                    </div>
+                    <div class="col">
+                    <div class="card">
+                            <div class="card-body">
+                                <div>
+                                    <label for="nameSearch" class="form-label">Search Name</label>
+                                    <input type="search" class="form-control" id="searchBar" placeholder="Search">
+                                    <br>
+                                    <button type="button" class="btn btn-secondary" onclick="SearchName()">Search Name</button>
+                                </div>
+                            </div>
+                            <ul class="list-group list-group-flush" id="NameList"></ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        
+    </body>
+
+    <script src="Playercode.js"></script>
+</html>
