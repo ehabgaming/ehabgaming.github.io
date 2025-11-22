@@ -37,7 +37,7 @@ function displayGame(games)
     let startTime = getStartTime.toLocaleString("en-US", { timeZone: "America/New_York" });
     
     let tipOffTime = startTime.slice(12);
-    if(time == "Final")
+    if(time == "Final" || time != null)
     {
       tipOffTime = "";
     }
@@ -80,5 +80,6 @@ function tomorrowGames()
 {
   getLiveGames(tomorrow);
 }
+
 
 getLiveGames(today);
