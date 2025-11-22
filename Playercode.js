@@ -108,15 +108,15 @@ function displayPlayer(player)
 {
     const firstName = player.first_name;
     const lastName = player.last_name;
-
     const fullName = `${firstName} ${lastName}`;
     const number = (player.jersey_number == null) ? "" : player.jersey_number;
-
     const height = (player.height == null) ? "" : player.height;
+    const position = player.position;
 
     const playerIteam = document.createElement("li");
     playerIteam.className = "list-group-item";
-    playerIteam.innerText = `#${number} ${fullName} ${height}`;
+    playerIteam.innerText = `#${number} ${fullName} ${height} ${position}`;
 
     return playerIteam;
+
 }
