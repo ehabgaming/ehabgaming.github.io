@@ -62,7 +62,8 @@ function displayGame(games)
                           <span class="badge rounded-pill text-bg-danger">
                           ${time}
                           </span>
-                          <p>${tipOffTime}</p>
+                          <br>
+                          <span class="badge rounded-pill text-bg-light">${tipOffTime}</span>
                         </div>
                       </div>`;
     return card;
