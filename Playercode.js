@@ -84,7 +84,7 @@ async function PlayGame() {
       gameStarter.innerHTML = `<label for="guessButton" class="form-label">Guess The Player</label>
                                <input type="search" class="form-control" id="GuessBar" placeholder="Guess Name">
                                <br>
-                               <button type="button" class="btn btn-secondary" onclick="CheckGuess()">Take Guess</button>`;
+                               <button type="button" class="btn btn-outline-success" onclick="CheckGuess()">Take Guess</button>`;
     } catch (error) {
       alert("Request Cool-Down plases wait a mintue");
     }
