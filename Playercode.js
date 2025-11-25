@@ -84,6 +84,7 @@ async function PlayGame() {
       gameStarter.innerHTML = `<label for="guessButton" class="form-label">Guess The Player</label>
                                <input type="search" class="form-control" id="GuessBar" placeholder="Guess Name">
                                <br>
+                               <div id="IncorrectMsg"></div>
                                <button type="button" class="btn btn-outline-success" onclick="CheckGuess()">Take Guess</button>`;
     } catch (error) {
       alert("Request Cool-Down plases wait a mintue");
@@ -94,13 +95,23 @@ async function PlayGame() {
 function CheckGuess()
 {
     const nameGuess = document.getElementById("GuessBar").value.trim();
+    const IncorrectMsgDiv = document.getElementById("IncorrectMsg");
     const playerName = `${randomPlayer.first_name} ${randomPlayer.last_name}`;
     if(nameGuess.toLowerCase() == playerName.toLowerCase())
     {
-        gameStarter.innerHTML = `<label class="form-label">YOU WON!!</label>
+        gameStarter.innerHTML = `<div class="alert alert-success" role="alert">YOU WON!!</div>
                                  <br>
                                  <label class="form-label">The Player Was</label>
                                  <input class="form-control" type="text" value="${playerName}" aria-label="readonly input example" readonly>`;
+    }
+    else
+    {
+      IncorrectMsgDiv.innerHTML = "";
+      const msg = document.createElement("div");
+      msg.className = "alert alert-danger";
+      msg.role = "alert";
+      msg.innerText = "Incorrect Name, Try Again";
+      IncorrectMsgDiv.appendChild(msg);
     }
 }
 
