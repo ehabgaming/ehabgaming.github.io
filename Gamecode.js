@@ -26,7 +26,7 @@ async function getLiveGames(date) {
       gameHolder.appendChild(displayGame(games));
     });
   } catch (error) {
-    alert("Request Cool-Down plases wait a mintue");
+    bootstrap.Toast.getOrCreateInstance('#myToast').show();
   }
 }
 

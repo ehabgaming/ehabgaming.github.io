@@ -20,7 +20,7 @@ async function SearchTeam() {
             list.appendChild(displayPlayer(player));
         });
     } catch (error) {
-      alert("Request Cool-Down plases wait a mintue");
+      bootstrap.Toast.getOrCreateInstance('#myToast').show();
     }
 }  
 
@@ -48,7 +48,7 @@ async function SearchName() {
               nameList.appendChild(displayPlayer(player));
           });
     } catch (err) {
-            alert("Request Cool-Down plases wait a mintue");
+            bootstrap.Toast.getOrCreateInstance('#myToast').show();
     }
 
 }  
@@ -87,7 +87,7 @@ async function PlayGame() {
                                <div id="IncorrectMsg"></div>
                                <button type="button" class="btn btn-outline-success" onclick="CheckGuess()">Take Guess</button>`;
     } catch (error) {
-      alert("Request Cool-Down plases wait a mintue");
+      bootstrap.Toast.getOrCreateInstance('#myToast').show();
     }
 
 } 
