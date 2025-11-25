@@ -59,7 +59,9 @@ function displayGame(games)
                         <div class="card-body">
                           <p>${homeTeam} @ ${awayTeam}</p>
                           <p>${homeTeamScore} - ${awayTeamScore}</p>
-                          <p>${time}</p>
+                          <span class="badge rounded-pill text-bg-danger">
+                          ${time}
+                          </span>
                           <p>${tipOffTime}</p>
                         </div>
                       </div>`;
