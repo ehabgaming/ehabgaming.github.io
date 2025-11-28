@@ -1,5 +1,6 @@
 const list = document.getElementById("PlayerList");
 const nameList = document.getElementById("NameList");
+const ShowPlayerAmount = document.getElementById("AmountOfPlayers");
 
 async function SearchTeam() {
     const teamValue = document.getElementById("teamDropdown").value;
@@ -44,6 +45,7 @@ async function SearchName() {
 
           nameList.innerHTML = "";
 
+          ShowPlayerAmount.innerHTML = `<div class="alert alert-primary" role="alert">${playerData.length} Players was found</div>`;
           playerData.forEach(player => {
               nameList.appendChild(displayPlayer(player));
           });
