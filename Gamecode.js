@@ -21,6 +21,12 @@ async function getLiveGames(date) {
     const result = await response.json();
     const todayGames = result.data;
     gameHolder.innerHTML = "";
+
+    if(todayGames.length == 0)
+    {
+      gameHolder.innerHTML = `<div class="col"></div><div class="col"><div class="alert alert-warning" role="alert">No Games Found<br>${date}</div></div>`;
+      return;
+    }
   
     todayGames.forEach(games =>  {
       gameHolder.appendChild(displayGame(games));
