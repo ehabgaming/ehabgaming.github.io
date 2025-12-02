@@ -1,12 +1,30 @@
 
 const date = new Date();
-const year = date.getFullYear();
-const month = date.getMonth() + 1;
-const day = date.getDate();
+const yesterdayDate = new Date(date);
+const tomorrowDate = new Date(date);
 
-const yesterday =   `${year}-${month}-${day-1}`;
-const today =   `${year}-${month}-${day}`;
-const tomorrow =   `${year}-${month}-${day+1}`;
+yesterdayDate.setDate(date.getDate() - 1);
+tomorrowDate.setDate(date.getDate() + 1);
+
+function formatDate(d) {
+  const year = d.getFullYear();
+  let month = d.getMonth() + 1;
+  let day = d.getDate();
+  
+  if(day < 10) {
+    day = '0' + day;
+  }
+  
+  if(month < 10) {
+    month = '0' + month;
+  }
+  
+  return `${year}-${month}-${day}`;
+}
+
+const yesterday = formatDate(yesterdayDate);
+const today = formatDate(date);
+const tomorrow = formatDate(tomorrowDate);
 
 const gameHolder = document.getElementById("Games_Grid");
 
@@ -40,9 +58,13 @@ function displayGame(games)
 {
     let time = games.time;
     let getStartTime = new Date(games.datetime);
-    let startTime = getStartTime.toLocaleString("en-US", { timeZone: "America/New_York" });
-    
-    let tipOffTime = startTime.slice(12);
+    let tipOffTime = getStartTime.toLocaleString("en-US", 
+      { timeZone: "America/New_York" ,
+        hour: 'numeric',
+        minute: '2-digit',
+        hour12: true
+      });
+
     if(time == "Final" || time != null)
     {
       tipOffTime = "";
